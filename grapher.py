@@ -30,14 +30,15 @@ for y in range(len(img)):
     img[math.floor(height/2), y] = [255,255,255]
 
 
+step = 0.01
 
-for x in range(len(img[0])):
+for x in np.arange(0, len(img[0]), step):
 
     x = x - math.floor(width/2)
 
     y_value = -math.floor(eval(input))
     if y_value <= height - math.floor(height/2) - 1 and y_value >= -height + math.floor(height/2) + 1:
-        img[y_value + math.floor(height/2), x - math.floor(width/2) - 1] = [255,0,0]
+        img[y_value + math.floor(height/2), int(x) - math.floor(width/2) - 1] = [255,0,0]
 
 
 
