@@ -14,7 +14,7 @@ start_time = time.perf_counter()
 width  = 100  +1
 height = 100  +1
 
-input = "1/5 * x ^ 2 - 30"
+input = "30/x"
 
 
 input = input.replace(" ","")
@@ -36,7 +36,11 @@ for x in np.arange(0, len(img[0]), step):
 
     x = x - math.floor(width/2)
 
+    if eval(input) == math.inf or eval(input) == -math.inf:
+        continue
+
     y_value = -math.floor(eval(input))
+
     if y_value <= height - math.floor(height/2) - 1 and y_value >= -height + math.floor(height/2) + 1:
         img[y_value + math.floor(height/2), int(x) - math.floor(width/2) - 1] = [255,0,0]
 
