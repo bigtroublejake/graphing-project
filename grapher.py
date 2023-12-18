@@ -14,7 +14,7 @@ start_time = time.perf_counter()
 width  = 100  +1
 height = 100  +1
 
-input = "30/x"
+input = "7/(np.cos(x/5))"
 
 
 input = input.replace(" ","")
